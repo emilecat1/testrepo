@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import List from "./pages/List";
+import Nav from "./components/Nav";
+import AddList from "./pages/AddList";
+import Profile from "./pages/Profile";
+import Reservations from "./pages/Reservations";
+import ListPage from "./pages/ListPage";
+import AddListItem from "./pages/AddListItem";
+import Pinned from "./pages/Pinned";
+import LijstBewaren from "./pages/LijstBewaren";
+import TestPage from "./pages/TestPage";
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route index element={<Home />} />
+        <Route path="/List" element={<List />} />
+        <Route path="/AddList" element={<AddList />} />
+        <Route path="/Profile" element={<Profile />} />
+        <Route path="/Reservations" element={<Reservations />} />
+        <Route path="/ListPage" element={<ListPage />} />
+        <Route path="/AddListItem" element={<AddListItem />} />
+        <Route path="/Pinned" element={<Pinned />} />
+        <Route path="/LijstBewaren" element={<LijstBewaren />} />
+        <Route path="/TestPage" element={<TestPage />} />
+
+      </Routes>
+      <Nav />
+
     </div>
   );
 }
